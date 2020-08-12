@@ -7,10 +7,23 @@ var sortable = Sortable.create(el, {
   ghostClass: "sortable-ghost",
 });
 
-// const codes = []
+const form = document.querySelector(".newCodeForm");
 
-// function submitNewCode(e) {
-//     e.preventDefault();
-//     const title = e.target.title.value;
-//     renderProjectList();
-//   }
+form.addEventListener("submit", (e) => {
+  submitNewCode(e);
+  form.reset();
+});
+
+function submitNewCode(e) {
+  e.preventDefault();
+  const title = e.target.title.value;
+  renderNewCode(title);
+}
+
+function renderNewCode(title) {
+  const items = document.querySelector("#items");
+  const newCode = document.createElement("li");
+  newCode.classList.add("list-group-item");
+  newCode.textContent = title;
+  items.appendChild(newCode);
+}
