@@ -7,6 +7,8 @@ var sortable = Sortable.create(el, {
   ghostClass: "sortable-ghost",
 });
 
+let numCodes = 0;
+
 const form = document.querySelector(".newCodeForm");
 
 form.addEventListener("submit", (e) => {
@@ -18,6 +20,7 @@ function submitNewCode(e) {
   e.preventDefault();
   const title = e.target.title.value;
   renderNewCode(title);
+  renderNewNumber(++numCodes);
 }
 
 function renderNewCode(title) {
@@ -26,4 +29,13 @@ function renderNewCode(title) {
   newCode.classList.add("list-group-item");
   newCode.textContent = title;
   items.appendChild(newCode);
+}
+
+function renderNewNumber(number) {
+  const numbers = document.querySelector("#numbers");
+  const newNumber = document.createElement("li");
+  newNumber.classList.add("list-group-item");
+  newNumber.classList.add("center");
+  newNumber.textContent = number;
+  numbers.appendChild(newNumber);
 }
