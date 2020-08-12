@@ -23,14 +23,29 @@
   <body>
     <div class="container">
       <h1>Modreg Sorter for Tutorial Balloting</h1>
+      <h6>
+        Usage: Enter module and tutorial code, and drag it in order of your
+        preference
+      </h6>
       <form class="newCodeForm">
         <label for="title">Code:</label>
         <input type="text" id="title" name="title" /><br />
         <input type="submit" value="Submit" />
       </form>
       <div class="row">
-        <div class="list-group col">
-          <ul id="items"></ul>
+        <div class="col-sm-2">
+          <div class="row">
+            <div class="list-group col">
+              <ul id="numbers"></ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-10">
+          <div class="row">
+            <div class="list-group col">
+              <ul id="items"></ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>

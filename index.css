@@ -6,3 +6,7 @@
 .list-group .list-group-item:hover {
   background-color: #f7f7f7;
 }
+
+.center {
+  text-align: center;
+}
